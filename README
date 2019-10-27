@@ -1,0 +1,22 @@
+Name: Boyuan Zhang
+
+Student ID: 9016234200
+
+
+In this assignment I've implemented the connection of different servers and clients. And implement 2 functions, write and compute. The program will write the information in a txt file named database.txt by using command write and compute the end to end delay by using command compute.
+
+
+The client.cpp establish a TCP socket connected to AWS server. It will send the command to AWS server and receive result from AWS server.
+
+The monitor.cpp establish a TCP connection to AWS server. It will receive the command and result from the AWS server.
+
+The aws.cpp establish an AWS server. It will receive command from client using TCP and send it to monitor using TCP. It will also send to server A and server B using UDP, which depends on what the command is.
+
+The serverA.cpp establish a server A. It will receive command from AWS server and write or search in the database, send the result to AWS server.
+
+The serverB.cpp establish a server B. It will receive command from AWS server and compute the end to end delay, send the result to AWS server.
+
+
+All messages exchange in char format and distinguish from each other with a space between 2 parameters.
+
+Some basic codes come from Beej's Guide.
